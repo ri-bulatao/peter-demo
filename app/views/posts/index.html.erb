@@ -1,0 +1,30 @@
+<div class="content">
+    <div class="top">
+        <h1>My Posts</h1>
+
+        <h3><%= link_to 'New Post +', new_post_path, class: 'button-link' %></h3>
+    </div>
+
+    <div class="card-container">
+    <% @posts.each do |post| %>
+        <div class="card-list">
+            <div class="container">
+                <h1 class="title card-list-title"><%= post.title %></h1>
+            </div>
+            <div>
+                <img src="<%= image_path 'ruby.jpg' %>" alt="Example Image" class="header-image">
+            </div>
+            <div class="blog-container">
+                <p  class="blog-content"><%= post.content %></p>
+            </div>
+            <div class="actions-container">
+                <div class="actions">
+                    <p><%= link_to 'Show', post_path(post), class: 'button-link' %></p>
+                    <p><%= link_to 'Edit', edit_post_path(post), class: 'button-link' %></p>
+                    <p><%= link_to 'Delete', post_path(post), data:{ turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'button-link' %></p>
+                </div>
+            </div>
+        </div>
+    <% end %>
+    </div>
+</div>

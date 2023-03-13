@@ -1,0 +1,17 @@
+<div class="content">
+  <div class="card">
+    <div class="container">
+        <h1 class="title"><%= @post.title %></h1>
+    </div>
+    <div>
+        <img src="<%= image_path 'ruby.jpg' %>" alt="Example Image" class="header-image">
+    </div>
+    <div>
+        <p  class="blog-content"><%= @post.content %></p>
+    </div>
+    <div class="actions">
+        <p><%= link_to 'Back', posts_path, class: 'button-link' %></p>
+        <p><%= link_to 'Edit', edit_post_path(@post), class: 'button-link' %></p>
+    </div>
+  </div>
+</div>

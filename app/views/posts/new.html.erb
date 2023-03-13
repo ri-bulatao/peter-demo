@@ -1,0 +1,25 @@
+<div class="content">
+
+ <h1>Edit Post</h1>
+
+  <div class="card">
+  <%= form_with model: @post, url: posts_path do |form| %>
+    <div class="form">
+      <div class="fields">
+        <%= form.label :title, class: "label" %>
+        <br>
+        <%= form.text_field :title, class: "input" %>
+      </div>
+
+      <div class="fields">
+        <%= form.label :content, class: "label" %>
+        <br>
+        <%= form.text_area :content, class: "textarea" %>
+      </div>
+      <div class="actions">
+          <%= form.submit 'Create Post', class: 'submit button-link' %>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>

@@ -1,0 +1,27 @@
+
+
+<div class="content">
+
+ <h1>New Post</h1>
+
+  <div class="card">
+  <%= form_with model: @post, url: post_path(@post), method: :patch do |form| %>
+    <div class="form">
+      <div class="fields">
+        <%= form.label :title, class: "label" %>
+        <br>
+        <%= form.text_field :title, class: "input" %>
+      </div>
+
+      <div class="fields">
+        <%= form.label :content, class: "label" %>
+        <br>
+        <%= form.text_area :content, class: "textarea" %>
+      </div>
+      <div class="actions">
+          <%= form.submit 'Update Post', class: 'submit button-link' %>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
